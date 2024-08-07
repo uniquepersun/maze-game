@@ -45,3 +45,43 @@ def main():
     
     player_x, player_y = 1, 1 
     goal_x, goal_y = len(MAZE[0]) - 2, len(MAZE) - 2  
+
+
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_LEFT]:
+            if MAZE[player_y][player_x - 1] != '#':
+                player_x -= 1
+        if keys[pygame.K_RIGHT]:
+            if MAZE[player_y][player_x + 1] != '#':
+                player_x += 1
+        if keys[pygame.K_UP]:
+            if MAZE[player_y - 1][player_x] != '#':
+                player_y -= 1
+        if keys[pygame.K_DOWN]:
+            if MAZE[player_y + 1][player_x] != '#':
+                player_y += 1
+
+        
+        if player_x == goal_x and player_y == goal_y:
+            print("You did it!")
+            running = False
+
+       
+        screen.fill(BACKGROUND_COLOR)
+        draw_maze(screen, MAZE)
+        pygame.draw.rect(screen, PLAYER_COLOR, (player_x * GRID_SIZE, player_y * GRID_SIZE, GRID_SIZE, GRID_SIZE))
+        pygame.draw.rect(screen, GOAL_COLOR, (goal_x * GRID_SIZE, goal_y * GRID_SIZE, GRID_SIZE, GRID_SIZE))
+        pygame.display.flip()
+
+        clock.tick(10)  
+
+    pygame.quit()
+
+if __name__ == "__main__":
+    main()
