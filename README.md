@@ -22,8 +22,8 @@ Use arrow keys to move through the maze. :arrow_left::arrow_right::arrow_up::arr
 
 ## Some screenshots for you :)
 - watch it in action!
-    - [here]()
-    - [another!]()
+    - [here](https://github.com/user-attachments/assets/c1f3ee35-4a90-4cda-a9d7-954dffc629e9)
+
 
 ## 🔗 contact me!!
 uniquepersun on :
